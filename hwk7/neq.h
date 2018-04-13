@@ -8,5 +8,5 @@ Purpose: To be used as the storage for the number of equations that will be inte
 */
 
 namespace neq {
-    int neq = 4;
+    const int neqs = 4;
 }

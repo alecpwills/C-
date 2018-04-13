@@ -11,37 +11,31 @@ Purpose: To allow the user to input specified intial conditions, regardless of t
 
 // Includes
 #include<iostream>
-#include "neq.h"
-
 
 
 // User Functions
+namespace neq {
+    const int neqs = 4;
+}
+
+
 namespace init_cond{
     // Define the initial time, timestep, stop time, and the initial RHS array.
-    double t, dt, tstop, y_init[neq::neq];
+    double t, dt, tstop;
+
+    // Define the initial coordinates
+    double y_init[neq::neqs]={1.0, 0.0, 0.0, 6.28318530718};
 
     void prob_init_conds() {
         // Initialize t to zero
-        t = 0.0d0
+        t = 0.0;
 
         // Initialize stop time to two years
-        tstop = 2.0d0
+        tstop = 2.0;
 
         // Ask user for timestep size
         std::cout << "Please input your timestep size (in years): ";
         std::cin >> dt;
-
-        // Initialize the initial x-coordinate, in AU
-        y_init[0] = 1.0d0
-
-        // Initialize the initial y-coordinate, in AU
-        y_init[1] = 0.0d0
-
-        // Initialize the initial x velocity
-        y_init[2] = 0.0d0
-
-        // Initialize the initial y velocity
-        y_init[3] = 6.28318530718d0  // AU/year, i.e. the circumference of the Earth's orbit/year
 
         return;
     }
